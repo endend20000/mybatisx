@@ -15,7 +15,6 @@
 
 	<modules>
 		<module>mybatisx.core</module>
-		<module>mybatisx.spring</module>
 		<module>mybatisx.demo</module>
 	</modules>
 
