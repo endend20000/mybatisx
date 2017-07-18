@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    		http://www.springframework.org/schema/tx
+      		http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+      		http://www.springframework.org/schema/aop
+           	http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+           	http://www.springframework.org/schema/context
+           	http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+ 
+ 	<context:property-placeholder ignore-unresolvable="true" location="db.properties"/>
+ 
+    <aop:aspectj-autoproxy proxy-target-class="true" />
+    
+	<context:annotation-config />
+
+	<!-- 自动注入bean 加载@Resource -->
+     <context:component-scan base-package="org.cabbage.mybatisx.core.*">
+    </context:component-scan>
+    
+    <import resource="classpath:spring-mybatis.xml"></import>
+    <import resource="classpath:spring-redis.xml"></import>
+</beans>
